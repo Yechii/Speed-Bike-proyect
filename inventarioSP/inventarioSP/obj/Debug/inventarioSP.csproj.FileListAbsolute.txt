@@ -8,3 +8,13 @@ C:\Users\ASUSPC\Downloads\inventarioSP-20170221T030403Z\inventarioSP\inventarioS
 C:\Users\ASUSPC\Downloads\inventarioSP-20170221T030403Z\inventarioSP\inventarioSP\bin\Debug\inventarioSP.pdb
 C:\Users\ASUSPC\Downloads\inventarioSP-20170221T030403Z\inventarioSP\inventarioSP\obj\Debug\inventarioSP.exe
 C:\Users\ASUSPC\Downloads\inventarioSP-20170221T030403Z\inventarioSP\inventarioSP\obj\Debug\inventarioSP.pdb
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\bin\Debug\inventarioSP.exe.config
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.exe
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.pdb
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\bin\Debug\inventarioSP.exe
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\bin\Debug\inventarioSP.pdb
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\bin\Debug\MySql.Data.dll
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.csprojResolveAssemblyReference.cache
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Vista.Principal.resources
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Properties.Resources.resources
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\inventarioSP\inventarioSP\obj\Debug\inventarioSP.csproj.GenerateResource.Cache
