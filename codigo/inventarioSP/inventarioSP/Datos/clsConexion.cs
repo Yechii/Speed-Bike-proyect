@@ -28,11 +28,10 @@ namespace inventarioSP.Datos
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             Conectar();
-            sql = "SELECT p.codigo, p.nombre, p.descripcion, p.marca, p.modelo, c.nombre as categoria , p.precio, p.cantidad, p.color_sabor from productos p join categorias c on p.categoria = c.id where "
-                + "p.codigo like '%" + bus + "%' or p.nombre like '%" + bus +
-                "%' or p.descripcion  like '%" + bus + "%' or p.marca  like '%"
-                + bus + "%' or p.modelo  like '%" +
-                bus + "%' or c.nombre  like '%" + bus + "%' or p.precio like '%" + bus +
+            sql = "SELECT p.codigo, p.nombre, p.marca, c.nombre as categoria , p.precio, p.cantidad, p.color_sabor from "
+                +"productos p join categorias c on p.categoria = c.id where "
+                + " p.codigo like '%" + bus + "%' or p.nombre like '%" + bus + "%' or p.marca  like '%"
+                 +bus + "%' or c.nombre  like '%" + bus + "%' or p.precio like '%" + bus +
                 "%' or p.cantidad like '%" + bus + "%' or p.color_sabor like '%" + bus + "%'";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
@@ -43,9 +42,7 @@ namespace inventarioSP.Datos
                 Pojos.clsVariables objValores = new Pojos.clsVariables();
                 objValores.codigo = dr.GetString("codigo");
                 objValores.nombre = dr.GetString("Nombre");
-                objValores.descripcion = dr.GetString("descripcion");
                 objValores.marca = dr.GetString("marca");
-                objValores.modelo = dr.GetString("modelo");
                 objValores.categoria = dr.GetString("categoria");
                 objValores.precio = dr.GetDouble("precio");
                 objValores.cantiadad = dr.GetInt32("cantidad");
@@ -64,8 +61,8 @@ namespace inventarioSP.Datos
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             Conectar();
-            sql = "select p.codigo, p.nombre, p.descripcion,"+
-            "p.marca, p.modelo, c.nombre as categoria , p.precio,"+
+            sql = "select p.codigo, p.nombre,"+
+            "p.marca, c.nombre as categoria , p.precio,"+
             "p.cantidad, p.color_sabor from productos p join categorias c on p.categoria = c.id;";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
@@ -76,9 +73,7 @@ namespace inventarioSP.Datos
                 Pojos.clsVariables objValores = new Pojos.clsVariables();
                 objValores.codigo = dr.GetString("codigo");
                 objValores.nombre = dr.GetString("Nombre");
-                objValores.descripcion = dr.GetString("descripcion");
                 objValores.marca = dr.GetString("marca");
-                objValores.modelo = dr.GetString("modelo");
                 objValores.categoria = dr.GetString("categoria");
                 objValores.precio = dr.GetDouble("precio");
                 objValores.cantiadad = dr.GetInt32("cantidad");
@@ -88,6 +83,24 @@ namespace inventarioSP.Datos
             Cerrar();
             return lstProd;
         }
+
+        public string autenticar(string nom) {
+            string a ="" ;
+            Conectar();
+            string sql = "select nombre, pass from usuarios where nombre like '" + nom + "';";
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cnConexion;
+            dr = cm.ExecuteReader();
+            if (dr.Read())
+            {
+                a = dr.GetString("pass");
+            }
+                Cerrar();
+            return a;
+                } 
 
         public void Cerrar()
         {

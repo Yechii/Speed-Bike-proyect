@@ -16,7 +16,7 @@ namespace inventarioSP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vista.Principal());
+            Application.Run(new Login());
         }
     }
 }

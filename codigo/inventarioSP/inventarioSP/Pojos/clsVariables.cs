@@ -11,9 +11,7 @@ namespace inventarioSP.Pojos
 
         private string pcodigo;
         private string pnombre;
-        private string pdescripcion;
         private string pmarca;
-        private string pmodelo;
         private string pcategoria;
         private double pprecio;
         private double pcantiadad;
@@ -29,21 +27,13 @@ namespace inventarioSP.Pojos
             get { return pnombre; }
             set { pnombre = value; }
         }
-        public string descripcion
-        {
-            get { return pdescripcion; }
-            set { pdescripcion = value; }
-        }
+        
         public string marca
         {
             get { return pmarca; }
             set { pmarca = value; }
         }
-        public string modelo
-        {
-            get { return pmodelo; }
-            set { pmodelo = value; }
-        }
+        
         public string categoria
         {
             get { return pcategoria; }
