@@ -17,39 +17,39 @@ namespace inventarioSP.Pojos
         private double pcantiadad;
         private string pcolor_sabor;
 
-        public string codigo
+        public string CODIGO
         {
             get { return pcodigo; }
             set { pcodigo = value; }
         }
-        public string nombre
+        public string NOMBRE
         {
             get { return pnombre; }
             set { pnombre = value; }
         }
         
-        public string marca
+        public string MARCA
         {
             get { return pmarca; }
             set { pmarca = value; }
         }
         
-        public string categoria
+        public string CATEGORIA
         {
             get { return pcategoria; }
             set { pcategoria = value; }
         }
-        public double precio
+        public double PRECIO
         {
             get { return pprecio; }
             set { pprecio = value; }
         }
-        public double cantiadad
+        public double CANTIDAD
         {
             get { return pcantiadad; }
             set { pcantiadad = value; }
         }
-        public string color_sabor
+        public string COLOR_SABOR
         {
             get { return pcolor_sabor; }
             set { pcolor_sabor = value; }

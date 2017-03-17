@@ -21,6 +21,11 @@ nombre varchar(50) not null
 
 
 
-create view vista_productos as
-select p.nombre, p.marca, c.nombre as categoria, p.precio, p.cantidad, p.color_sabor
-from productos p join categorias c on p.categoria =c.id;
+create table usuarios
+(
+idUsuario varchar(5)primary key,
+nombre varchar (55) not null,
+pass varchar (55) not null
+);
+
+insert into usuarios values('001','admin','1234');

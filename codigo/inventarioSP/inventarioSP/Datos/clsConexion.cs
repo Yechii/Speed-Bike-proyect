@@ -28,7 +28,7 @@ namespace inventarioSP.Datos
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             Conectar();
-            sql = "SELECT p.codigo, p.nombre, p.marca, c.nombre as categoria , p.precio, p.cantidad, p.color_sabor from "
+            sql = "SELECT p.codigo as CLAVE, p.nombre AS PRODUCTO, p.marca AS MARCA, c.nombre as CATEGORIA , p.precio AS PRECIO, p.cantidad AS CANTIDAD, p.color_sabor AS COLOR_SABOR from "
                 +"productos p join categorias c on p.categoria = c.id where "
                 + " p.codigo like '%" + bus + "%' or p.nombre like '%" + bus + "%' or p.marca  like '%"
                  +bus + "%' or c.nombre  like '%" + bus + "%' or p.precio like '%" + bus +
@@ -40,13 +40,13 @@ namespace inventarioSP.Datos
             while (dr.Read())
             {
                 Pojos.clsVariables objValores = new Pojos.clsVariables();
-                objValores.codigo = dr.GetString("codigo");
-                objValores.nombre = dr.GetString("Nombre");
-                objValores.marca = dr.GetString("marca");
-                objValores.categoria = dr.GetString("categoria");
-                objValores.precio = dr.GetDouble("precio");
-                objValores.cantiadad = dr.GetInt32("cantidad");
-                objValores.color_sabor = dr.GetString("color_sabor");
+                objValores.CODIGO = dr.GetString("CLAVE");
+                objValores.NOMBRE = dr.GetString("PRODUCTO");
+                objValores.MARCA = dr.GetString("MARCA");
+                objValores.CATEGORIA = dr.GetString("CATEGORIA");
+                objValores.PRECIO = dr.GetDouble("PRECIO");
+                objValores.CANTIDAD = dr.GetInt32("CANTIDAD");
+                objValores.COLOR_SABOR = dr.GetString("COLOR_SABOR");
                 lstProd.Add(objValores);
             }
             Cerrar();
@@ -61,9 +61,7 @@ namespace inventarioSP.Datos
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             Conectar();
-            sql = "select p.codigo, p.nombre,"+
-            "p.marca, c.nombre as categoria , p.precio,"+
-            "p.cantidad, p.color_sabor from productos p join categorias c on p.categoria = c.id;";
+            sql = "select p.codigo as CLAVE, p.nombre AS PRODUCTO, p.marca AS MARCA, c.nombre as CATEGORIA , p.precio AS PRECIO, p.cantidad AS CANTIDAD, p.color_sabor AS COLOR_SABOR from productos p join categorias c on p.categoria = c.id;";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cnConexion;
@@ -71,13 +69,13 @@ namespace inventarioSP.Datos
             while (dr.Read())
             {
                 Pojos.clsVariables objValores = new Pojos.clsVariables();
-                objValores.codigo = dr.GetString("codigo");
-                objValores.nombre = dr.GetString("Nombre");
-                objValores.marca = dr.GetString("marca");
-                objValores.categoria = dr.GetString("categoria");
-                objValores.precio = dr.GetDouble("precio");
-                objValores.cantiadad = dr.GetInt32("cantidad");
-                objValores.color_sabor = dr.GetString("color_sabor");
+                objValores.CODIGO = dr.GetString("CLAVE");
+                objValores.NOMBRE = dr.GetString("PRODUCTO");
+                objValores.MARCA = dr.GetString("MARCA");
+                objValores.CATEGORIA = dr.GetString("CATEGORIA");
+                objValores.PRECIO = dr.GetDouble("PRECIO");
+                objValores.CANTIDAD = dr.GetInt32("CANTIDAD");
+                objValores.COLOR_SABOR = dr.GetString("COLOR_SABOR");
                 lstProd.Add(objValores);
             }
             Cerrar();
