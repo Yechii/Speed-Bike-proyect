@@ -16,7 +16,7 @@ namespace inventarioSP.Datos
         public void Conectar()
         {
             string strCadenaConexion;
-            strCadenaConexion = "SERVER=" + "127.0.0.1" + ";PORT=3306" + ";DATABASE=" + "speekbike" + ";UID=" + "root" + ";PWD=" + "root";
+            strCadenaConexion = "SERVER=" + "127.0.0.1" + ";PORT=3306" + ";DATABASE=" + "speekbik" + ";UID=" + "root" + ";PWD=" + "root";
             cnConexion.ConnectionString = strCadenaConexion;
             cnConexion.Open();
         }
@@ -81,7 +81,6 @@ namespace inventarioSP.Datos
             Cerrar();
             return lstProd;
         }
-
         public string autenticar(string nom) {
             string a ="" ;
             Conectar();
@@ -99,10 +98,79 @@ namespace inventarioSP.Datos
                 Cerrar();
             return a;
                 } 
-
         public void Cerrar()
         {
             cnConexion.Close();
+        }
+        public void AgregarPro(Pojos.clsVariables objValores)
+        {
+            string sql;
+            MySqlCommand cm;
+            Conectar();
+
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@codigo", objValores.CODIGO);
+            cm.Parameters.AddWithValue("@nombre", objValores.NOMBRE);
+            cm.Parameters.AddWithValue("@marca", objValores.MARCA);
+            cm.Parameters.AddWithValue("@categoria", objValores.CATEGORIA);
+            cm.Parameters.AddWithValue("@precio", objValores.PRECIO);
+            cm.Parameters.AddWithValue("@cantidad", objValores.CANTIDAD);
+            cm.Parameters.AddWithValue("@color_sabor", objValores.COLOR_SABOR);
+            sql = "INSERT INTO productos (codigo,nombre,marca,categoria,precio,cantidad,color_sabor)VALUES (@codigo,@nombre,@marca,@categoria,@precio,@cantidad,@color_sabor)";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cnConexion;
+            cm.ExecuteNonQuery();
+            Cerrar();
+        }
+        public void BuscarPro(Pojos.clsVariables objValores)
+        {
+            string sql;
+            MySqlCommand cm;
+            MySqlDataReader dr;
+            Conectar();
+            cm = new MySqlCommand();
+            sql = "SELECT * FROM productos WHERE " + objValores.CODIGO + "=codigo";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cnConexion;
+            cm.ExecuteNonQuery();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                objValores.CODIGO = "1";
+
+            }
+            Cerrar();
+        }
+        public void editar(Pojos.clsVariables objValores)
+        {
+            Conectar();
+            MySqlCommand cm = new MySqlCommand("EditarProducto", cnConexion);
+            cm.Parameters.AddWithValue("@codi", objValores.CODIGO);
+            cm.Parameters.AddWithValue("@nombre", objValores.NOMBRE);
+            cm.Parameters.AddWithValue("@marca", objValores.MARCA);
+            cm.Parameters.AddWithValue("@categoria", objValores.CATEGORIA);
+            cm.Parameters.AddWithValue("@precio", objValores.PRECIO);
+            cm.Parameters.AddWithValue("@cantidad", objValores.CANTIDAD);
+            cm.Parameters.AddWithValue("@color_sabor", objValores.COLOR_SABOR);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.ExecuteNonQuery();
+            Cerrar();
+        }
+        public void EliminarPro(Pojos.clsVariables objValores)
+        {
+            string sql;
+            MySqlCommand cm;
+            Conectar();
+
+            cm = new MySqlCommand();
+            sql = "DELETE FROM productos WHERE codigo = '" + objValores.CODIGO + "'";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cnConexion;
+            cm.ExecuteNonQuery();
+            Cerrar();
         }
         #endregion
     }

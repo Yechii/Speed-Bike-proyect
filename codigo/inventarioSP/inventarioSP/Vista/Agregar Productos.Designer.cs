@@ -1,4 +1,4 @@
-﻿namespace inventarioSP
+﻿namespace inventarioSP.Vista
 {
     partial class Agregar_Productos
     {
@@ -33,17 +33,17 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboCodigo = new System.Windows.Forms.ComboBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtcolorSabor = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -55,6 +55,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -66,7 +67,6 @@
             this.label1.Size = new System.Drawing.Size(77, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombre
             // 
@@ -93,13 +93,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Código:";
             // 
-            // comboCodigo
+            // cmbCategoria
             // 
-            this.comboCodigo.FormattingEnabled = true;
-            this.comboCodigo.Location = new System.Drawing.Point(149, 194);
-            this.comboCodigo.Name = "comboCodigo";
-            this.comboCodigo.Size = new System.Drawing.Size(134, 21);
-            this.comboCodigo.TabIndex = 5;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cmbCategoria.Location = new System.Drawing.Point(149, 194);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(134, 21);
+            this.cmbCategoria.TabIndex = 5;
             // 
             // label3
             // 
@@ -133,37 +136,17 @@
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Marca:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(65, 193);
+            this.label6.Location = new System.Drawing.Point(47, 193);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.Size = new System.Drawing.Size(87, 19);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Código:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(65, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 19);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Modelo:";
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(149, 110);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(134, 20);
-            this.txtModelo.TabIndex = 11;
+            this.label6.Text = "Categoria:";
             // 
             // txtMarca
             // 
@@ -195,6 +178,25 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(50, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 19);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Cantidad:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(149, 110);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(134, 20);
+            this.txtCantidad.TabIndex = 11;
             // 
             // Agregar_Productos
             // 
@@ -206,13 +208,13 @@
             this.Controls.Add(this.txtcolorSabor);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtModelo);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboCodigo);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
@@ -220,7 +222,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Agregar_Productos";
             this.Text = "Agregar_Productos";
-            this.Load += new System.EventHandler(this.Agregar_Productos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,16 +234,16 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboCodigo;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtcolorSabor;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

@@ -33,27 +33,22 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(299, 97);
+            this.txtBuscar.Location = new System.Drawing.Point(126, 36);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(321, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(143, 20);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress_1);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Jokerman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(643, 97);
+            this.btnBuscar.Location = new System.Drawing.Point(290, 29);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(106, 46);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 33);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -61,53 +56,35 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Jokerman", 12F);
-            this.btnSalir.Location = new System.Drawing.Point(793, 97);
+            this.btnSalir.Location = new System.Drawing.Point(232, 372);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(96, 49);
+            this.btnSalir.Size = new System.Drawing.Size(75, 35);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // dtgDatos
             // 
-            this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDatos.Location = new System.Drawing.Point(110, 185);
+            this.dtgDatos.Location = new System.Drawing.Point(33, 73);
             this.dtgDatos.Name = "dtgDatos";
-            this.dtgDatos.Size = new System.Drawing.Size(766, 433);
+            this.dtgDatos.Size = new System.Drawing.Size(493, 284);
             this.dtgDatos.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Jokerman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(148)))));
-            this.label1.Location = new System.Drawing.Point(288, 46);
+            this.label1.Location = new System.Drawing.Point(123, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 31);
+            this.label1.Size = new System.Drawing.Size(194, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Escribe el código del producto a buscar";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::inventarioSP.Properties.Resources._16838142_1210379159011508_1676014002_n;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(958, 658);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(552, 410);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgDatos);
             this.Controls.Add(this.btnSalir);
@@ -115,9 +92,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Name = "Principal";
             this.Text = "Inventario";
-            this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +105,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
