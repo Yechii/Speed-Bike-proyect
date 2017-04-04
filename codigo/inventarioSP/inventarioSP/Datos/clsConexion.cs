@@ -16,7 +16,7 @@ namespace inventarioSP.Datos
         public void Conectar()
         {
             string strCadenaConexion;
-            strCadenaConexion = "SERVER=" + "127.0.0.1" + ";PORT=3306" + ";DATABASE=" + "speekbik" + ";UID=" + "root" + ";PWD=" + "root";
+            strCadenaConexion = "SERVER=" + "127.0.0.1" + ";PORT=3306" + ";DATABASE=" + "speekbike" + ";UID=" + "root" + ";PWD=" + "root";
             cnConexion.ConnectionString = strCadenaConexion;
             cnConexion.Open();
         }
@@ -81,10 +81,10 @@ namespace inventarioSP.Datos
             Cerrar();
             return lstProd;
         }
-        public string autenticar(string nom) {
-            string a ="" ;
+        public Int16 autenticar(string nom, string pass) {
+            Int16 a =0 ;
             Conectar();
-            string sql = "select nombre, pass from usuarios where nombre like '" + nom + "';";
+            string sql = "select count(*) from Usuarios where nombre = '"+ nom +"' and pass = sha1('"+ pass +"'); ";
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             cm.CommandText = sql;
@@ -93,7 +93,7 @@ namespace inventarioSP.Datos
             dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                a = dr.GetString("pass");
+                a = dr.GetInt16("count(*)");
             }
                 Cerrar();
             return a;

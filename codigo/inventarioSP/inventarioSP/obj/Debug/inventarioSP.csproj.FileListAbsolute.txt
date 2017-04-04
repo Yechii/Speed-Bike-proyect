@@ -25,7 +25,6 @@ C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.exe
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.pdb
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.csprojResolveAssemblyReference.cache
-C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Agregar_Productos.resources
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Login.resources
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Vista.EditarProductos.resources
 C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Vista.Principal.resources
@@ -89,3 +88,4 @@ C:\Users\sandra\Downloads\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Prope
 C:\Users\sandra\Downloads\inventarioSP\inventarioSP\obj\Debug\inventarioSP.csproj.GenerateResource.Cache
 C:\Users\sandra\Downloads\inventarioSP\inventarioSP\obj\Debug\inventarioSP.exe.manifest
 C:\Users\sandra\Downloads\inventarioSP\inventarioSP\obj\Debug\inventarioSP.application
+C:\Users\Barcillo\Documents\Speed-Bike-proyect\codigo\inventarioSP\inventarioSP\obj\Debug\inventarioSP.Vista.Agregar_Productos.resources

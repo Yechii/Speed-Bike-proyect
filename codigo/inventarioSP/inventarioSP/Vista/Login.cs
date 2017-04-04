@@ -24,17 +24,16 @@ namespace inventarioSP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Datos.clsConexion obj = new Datos.clsConexion();
-            string b = obj.autenticar(txtUsuario.Text);
+            Int16 b = obj.autenticar(txtUsuario.Text,txtContra.Text);
 
-            if (b == txtContra.Text)
+            if (b == 1)
             {
-                MessageBox.Show("Contraseña y usuario correctos");
                 Vista.Principal frmprin = new Vista.Principal();
                 this.Hide();
                 frmprin.ShowDialog();
@@ -42,8 +41,8 @@ namespace inventarioSP
             } else
             {
                 MessageBox.Show("Contraseña o usuario incorrecto");
-                
-
+                txtContra.Text = "";
+                txtUsuario.Text = "";
             }
             
         }

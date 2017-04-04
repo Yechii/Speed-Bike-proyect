@@ -45,7 +45,7 @@ namespace inventarioSP.Vista
 
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

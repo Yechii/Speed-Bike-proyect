@@ -1,5 +1,6 @@
-create database speekbik;
-use speekbik;
+create database speekbike;
+
+use speekbike;
 
 create table productos(
 codigo varchar(15) primary key,
@@ -20,12 +21,12 @@ nombre varchar(50) not null
 );
 
 
-
 create table usuarios
 (
 idUsuario varchar(5)primary key,
 nombre varchar (55) not null,
-pass varchar (55) not null
+pass char (40) not null
 );
 
+insert into usuarios values('1','admin',sha1('1234'));
 
